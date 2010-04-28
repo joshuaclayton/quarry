@@ -1,0 +1,10 @@
+lib/quarry/quarry.bundle
+
+tmp/*
+*.DS_Store
+coverage/*
+*.swp
+*.swo
+rerun.txt
+
+!.keep
