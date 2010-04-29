@@ -13,7 +13,8 @@ begin
   Cucumber::Rake::Task.new do |t|
     t.rcov = true
   end
-  task :cucumber => :compile
+
+  task :cucumber => [:clean, :compile]
 rescue LoadError
   task :cucumber do
     abort "Cucumber is not available. In order to run features, you must: gem install cucumber"
