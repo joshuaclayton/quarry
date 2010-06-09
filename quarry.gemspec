@@ -1,13 +1,13 @@
 Gem::Specification.new do |s|
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
 
   s.name = %q{quarry}
   s.summary = %q{Dig in to location conversion}
   s.homepage = %q{http://github.com/joshuaclayton/quarry}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   s.authors = ["Josh Clayton"]
-  s.date = %q{2010-05-02}
+  s.date = %q{2010-06-09}
   s.email = %q{joshua.clayton@gmail.com}
   s.extensions = ["ext/quarry/extconf.rb"]
   s.files = [
@@ -16,6 +16,9 @@ Gem::Specification.new do |s|
     "MIT-LICENSE",
     "README.markdown",
     "Rakefile",
+    "lib/quarry.rb",
+    "lib/quarry/mgrs.rb",
+    "lib/quarry/lat_lng.rb",
     "ext/quarry/extconf.rb",
     "ext/quarry/mgrs.c",
     "ext/quarry/mgrs.h",
