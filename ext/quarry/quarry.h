@@ -1,11 +1,6 @@
 # define RAD_TO_DEG 57.29577951308232087 /* 180/PI */
 # define DEG_TO_RAD 0.0174532925199433 /* PI/180 */
 
-VALUE mgrs_init(VALUE klass, VALUE grid) {
-  rb_iv_set(klass, "@grid", grid);
-  return Qnil;
-}
-
 VALUE mgrs_to_lat_long(VALUE klass) {
   VALUE grid = rb_iv_get(klass, "@grid");
 
@@ -19,15 +14,6 @@ VALUE mgrs_to_lat_long(VALUE klass) {
   rb_ary_push(ary, rb_float_new(lat*RAD_TO_DEG));
   rb_ary_push(ary, rb_float_new(lng*RAD_TO_DEG));
   return ary;
-}
-
-VALUE lat_long_init(VALUE klass, VALUE lat_long) {
-  VALUE iv_latitude  = rb_funcall(rb_ary_shift(lat_long), rb_intern("to_f"), 0);
-  VALUE iv_longitude = rb_funcall(rb_ary_shift(lat_long), rb_intern("to_f"), 0);
-
-  rb_iv_set(klass, "@latitude",  iv_latitude);
-  rb_iv_set(klass, "@longitude", iv_longitude);
-  return Qnil;
 }
 
 VALUE lat_long_to_mgrs(VALUE klass) {

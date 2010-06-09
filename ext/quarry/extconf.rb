@@ -1,2 +1,2 @@
 require "mkmf"
-create_makefile("quarry")
+create_makefile("quarry/quarry")

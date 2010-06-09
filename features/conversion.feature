@@ -2,7 +2,7 @@ Feature: Conversion
   Scenario Outline: Convert MGRS to latitude and longitude
     When I convert the MGRS "<mgrs>"
     Then I should be near "<location>"
-    Then I should have the following result:
+    And I should have the following result:
       | latitude   | longitude   |
       | <latitude> | <longitude> |
     Examples:
