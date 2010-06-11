@@ -7,5 +7,6 @@ coverage/*
 *.swo
 rerun.txt
 pkg/*
+*.gem
 
 !.keep
