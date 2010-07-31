@@ -1,4 +1,4 @@
-# include "ruby.h"
+# include <ruby.h>
 # include "mgrs.h"
 # include "quarry.h"
 

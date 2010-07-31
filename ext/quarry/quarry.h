@@ -2,18 +2,18 @@
 # define DEG_TO_RAD 0.0174532925199433 /* PI/180 */
 
 VALUE mgrs_to_lat_long(VALUE klass) {
-  VALUE grid = rb_iv_get(klass, "@grid");
+  VALUE mgrs_grid = rb_iv_get(klass, "@grid");
+  char* grid = StringValuePtr(mgrs_grid);
 
   double lat;
   double lng;
-  char* grd = StringValuePtr(grid);
 
-  Convert_MGRS_To_Geodetic (grd, &lat, &lng);
+  Convert_MGRS_To_Geodetic(grid, &lat, &lng);
 
-  VALUE ary = rb_ary_new();
-  rb_ary_push(ary, rb_float_new(lat*RAD_TO_DEG));
-  rb_ary_push(ary, rb_float_new(lng*RAD_TO_DEG));
-  return ary;
+  VALUE lat_lng_array = rb_ary_new();
+  rb_ary_push(lat_lng_array, rb_float_new(lat*RAD_TO_DEG));
+  rb_ary_push(lat_lng_array, rb_float_new(lng*RAD_TO_DEG));
+  return lat_lng_array;
 }
 
 VALUE lat_long_to_mgrs(VALUE klass) {
