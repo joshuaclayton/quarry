@@ -15,8 +15,8 @@ Then %{I should be near "$city"} do |city|
 end
 
 Then %{I should have the following result:} do |table|
-  table.hashes.first["latitude"].should == @latitude.to_s
-  table.hashes.first["longitude"].should == @longitude.to_s
+  table.hashes.first["latitude"].to_f.should be_within(1.0e-12).of(@latitude.to_f)
+  table.hashes.first["longitude"].to_f.should be_within(1.0e-12).of(@longitude.to_f)
 end
 
 Then /^I should have the MGRS result (.+)$/ do |mgrs|

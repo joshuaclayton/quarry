@@ -1,4 +1,5 @@
 lib/quarry/quarry.bundle
+Gemfile.lock
 
 tmp/*
 *.DS_Store

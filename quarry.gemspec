@@ -1,45 +1,28 @@
+# -*- encoding: utf-8 -*-
+$:.push File.expand_path("../lib", __FILE__)
+require "quarry/version"
+
 Gem::Specification.new do |s|
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.7.2}
 
-  s.name = %q{quarry}
-  s.summary = %q{Dig in to location conversion}
+  s.name     = %q{quarry}
+  s.summary  = %q{Dig in to location conversion}
   s.homepage = %q{http://github.com/joshuaclayton/quarry}
-  s.version = "0.0.2"
-  s.authors = ["Josh Clayton"]
-  s.date = %q{2010-06-09}
-  s.email = %q{joshua.clayton@gmail.com}
-  s.extensions = ["ext/quarry/extconf.rb"]
-  s.files = [
-    ".gitignore",
-    "GEOTRANS-LICENSE",
-    "MIT-LICENSE",
-    "README.markdown",
-    "Rakefile",
-    "lib/quarry.rb",
-    "lib/quarry/mgrs.rb",
-    "lib/quarry/lat_lng.rb",
-    "ext/quarry/extconf.rb",
-    "ext/quarry/mgrs.c",
-    "ext/quarry/mgrs.h",
-    "ext/quarry/polarst.c",
-    "ext/quarry/polarst.h",
-    "ext/quarry/quarry.c",
-    "ext/quarry/quarry.h",
-    "ext/quarry/tranmerc.c",
-    "ext/quarry/tranmerc.h",
-    "ext/quarry/ups.c",
-    "ext/quarry/ups.h",
-    "ext/quarry/utm.c",
-    "ext/quarry/utm.h"
-  ]
-  s.test_files = [
-    ".autotest",
-    "cucumber.yml",
-    "features/conversion.feature",
-    "features/step_definitions/conversion_steps.rb",
-    "features/support/env.rb",
-  ]
+  s.version  = Quarry::VERSION
+  s.authors  = ["Josh Clayton"]
+  s.email    = %q{joshua.clayton@gmail.com}
 
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  s.require_paths = ["lib"]
+
+  s.extensions = ["ext/quarry/extconf.rb"]
+
+  s.add_dependency "rake-compiler", "0.7.6"
+
+  s.add_development_dependency "rspec",     "2.5.0"
+  s.add_development_dependency "cucumber",  "0.10.2"
+  s.add_development_dependency "rcov",      "0.9.9"
   s.add_development_dependency "graticule", ">= 0.2.12"
 end
