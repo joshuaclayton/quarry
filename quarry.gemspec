@@ -21,8 +21,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rake-compiler", "0.7.6"
 
-  s.add_development_dependency "rspec",     "2.5.0"
-  s.add_development_dependency "cucumber",  "0.10.2"
+  s.add_development_dependency "rspec",     "2.7.0"
+  s.add_development_dependency "cucumber",  "1.1.4"
   s.add_development_dependency "rcov",      "0.9.9"
-  s.add_development_dependency "graticule", ">= 0.2.12"
+  s.add_development_dependency "graticule", ">= 2.2.0"
 end
